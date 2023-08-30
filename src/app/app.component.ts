@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spring-boot-frontend-api-rest';
+  curso: string = 'Curso Spring 5 con Angular 10';
+  profesor: string = 'Rolando Salinas';
 }

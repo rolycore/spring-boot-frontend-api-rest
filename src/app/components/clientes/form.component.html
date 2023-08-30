@@ -1,0 +1,302 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card bg-dark text-white">
+      <div class="card-header">{{titulo}}</div>
+      <div class="card-body">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 1" (click)="activeTab = 1"> Datos Generales de la
+              Empresa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 2" (click)="activeTab = 2"> Datos de Contacto Servicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 3" (click)="activeTab = 3">Datos de Contacto Cobro</a>
+          </li>
+        </ul>
+        <form >
+          <div *ngIf="activeTab===1">
+            <div class="form-group">
+              <label for="cod_cliente" class="form-label">Codigo Cliente</label>
+              <input id="cod_cliente" type="text" name="cod_cliente" [(ngModel)]="cliente.cod_cliente" class="form-control"
+                placeholder="Ingrese el codigo del Cliente" />
+           <!--   <div class="alert alert-danger"
+                *ngIf="formulario.get('cod_cliente')?.invalid && formulario.get('cod_cliente')?.touched">
+                Codigo es requerido
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="nombre" class="col-form-label col-sm-6">Nombre Reprepresentarte Legal</label>
+              <input id="nombre" type="text" [(ngModel)]="cliente.nombre" name="nombre"class="form-control"
+                placeholder="Ingrese el Nombre" />
+            <!--   <div class="alert alert-danger"
+                *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
+                Nombre es requerido
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="apellido" class="col-form-label col-sm-6">Apellido</label>
+
+              <input id="apellido" type="text"  name="apellido"[(ngModel)]="cliente.apellido" class="form-control"
+                placeholder="Ingrese el Apellido" />
+            <!--   <div class="alert alert-danger"
+                *ngIf="formulario?.get('apellido')?.invalid && formulario?.get('apellido')?.touched">
+                Apellido es requerida
+              </div>  -->
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="col-form-label col-sm-6">Email</label>
+
+              <input id="email" type="text" name="email"  [(ngModel)]="cliente.email" class="form-control"
+                placeholder="Ingrese el Email" />
+            <!--   <div class="alert alert-danger"
+                *ngIf="formulario?.get('email')?.invalid && formulario?.get('email')?.touched">
+                Email inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="nombre_comercial" class="col-form-label col-sm-6">Nombre Comercial de la Empresa</label>
+
+              <input id="nombre_comercial" type="text" name="nombre_comercial" [(ngModel)]="cliente.nombre_comercial" class="form-control"
+                placeholder="Ingrese el Nombre Comercial" />
+            <!--  <div class="alert alert-danger"
+                *ngIf="formulario?.get('nombre_comercial')?.invalid && formulario?.get('nombre_comercial')?.touched">
+                Nombre comercial inválido
+              </div> -->
+
+            </div>
+            <div class="form-group">
+              <label for="abreviatura" class="col-form-label col-sm-6">Nombre Abreviado</label>
+
+              <input id="abreviatura" type="text" name="abreviatura" [(ngModel)]="cliente.abreviatura" class="form-control"
+                placeholder="Ingrese las Siglas de la Empresa" />
+            <!--  <div class="alert alert-danger"
+                *ngIf="formulario?.get('abreviatura')?.invalid && formulario?.get('abreviatura')?.touched">
+                Abreviaturas inválida
+              </div> -->
+
+            </div>
+            <div class="form-group">
+              <label for="razon_social" class="col-form-label col-sm-6">Razon Social</label>
+
+              <input id="razon_social" type="text" name="razon_social" [(ngModel)]="cliente.razon_social" class="form-control" placeholder="Ingrese la Razon Social de la Empresa" />
+            <!--  <div class="alert alert-danger"
+                *ngIf="formulario?.get('ruc')?.invalid && formulario?.get('ruc')?.touched">
+                Ruc inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="ruc" class="col-form-label col-sm-6">Ruc</label>
+
+              <input id="ruc" type="text" name="ruc" [(ngModel)]="cliente.ruc" class="form-control" placeholder="Ingrese el Ruc de la Empresa" />
+            <!--  <div class="alert alert-danger"
+                *ngIf="formulario?.get('ruc')?.invalid && formulario?.get('ruc')?.touched">
+                Ruc inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="dv" class="col-form-label col-sm-6">Dv</label>
+
+              <input id="dv" type="number" name="dv"  [(ngModel)]="cliente.dv" class="form-control"
+                placeholder="Ingrese el Dv de la Empresa" />
+             <!-- <div class="alert alert-danger" *ngIf="formulario?.get('dv')?.invalid && formulario?.get('dv')?.touched">
+                Dv inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="telefono_empresa" class="col-form-label col-sm-6">Telefono Empresa</label>
+
+              <input id="telefono_empresa" type="text" name="telefono_empresa" [(ngModel)]="cliente.telefono_empresa" class="form-control" placeholder="Ingrese el Telefono de la Empresa" />
+            <!--  <div class="alert alert-danger"
+                *ngIf="formulario?.get('ruc')?.invalid && formulario?.get('ruc')?.touched">
+                Ruc inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="actividad_economica" class="col-form-label col-sm-6">Actividad Economica</label>
+
+              <input id="actividad_economica"  name="actividad_economica" type="text"  [(ngModel)]="cliente.actividad_economica" class="form-control"
+                placeholder="Ingrese la Actividad Economica de la Empresa" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('actividad_economica')?.invalid && formulario?.get('actividad_economica')?.touched">
+                Actividad economica inválida
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="direccion" class="col-form-label col-sm-6">Direccion</label>
+
+              <input id="direccion" name="direccion" type="text" [(ngModel)]="cliente.direccion" class="form-control"
+                placeholder="Ingrese la Actividad Economica de la Empresa" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('direccion')?.invalid && formulario?.get('direccion')?.touched">
+                Direccion inválida
+              </div>-->
+
+            </div>
+          </div>
+
+          <div *ngIf="activeTab === 2">
+            <div class="form-group">
+              <label for="nombre_contacto" class="col-form-label col-sm-6">Nombre Contacto Servicio</label>
+
+              <input id="nombre_contacto" name="nombre_contacto" type="text"  [(ngModel)]="cliente.nombre_contacto" class="form-control"
+                placeholder="Ingrese el Nombre del contacto Servicio" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('nombre_contacto')?.invalid && formulario?.get('nombre_contacto')?.touched">
+                Nombre de contacto inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="correo_servicio" class="col-form-label col-sm-6">Correo Contacto Servicio</label>
+
+              <input id="correo_servicio" name="correo_servicio"type="email" [(ngModel)]="cliente.correo_servicio" class="form-control"
+                placeholder="Ingrese el Correo del contacto Servicio" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('correo_servicio')?.invalid && formulario?.get('correo_servicio')?.touched">
+                Correo de contacto inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="telefono_servicio" class="col-form-label col-sm-6">Telefono Contacto Servicio</label>
+
+              <input id="telefono_servicio" name="telefono_servicio" type="text" [(ngModel)]="cliente.telefono_servicio" class="form-control"
+                placeholder="Ingrese el telefono del contacto Servicio" />
+              <!--<div class="alert alert-danger"
+                *ngIf="formulario?.get('telefono_servicio')?.invalid && formulario?.get('telefono_servicio')?.touched">
+                Telefono de contacto inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="celular_servicio" class="col-form-label col-sm-6">Celular Contacto Servicio</label>
+
+              <input id="celular_servicio" name="celular_servicio" type="text"   [(ngModel)]="cliente.celular_servicio" class="form-control"
+                placeholder="Ingrese el celular del contacto Servicio" />
+              <!--<div class="alert alert-danger"
+                *ngIf="formulario?.get('celular_servicio')?.invalid && formulario?.get('celular_servicio')?.touched">
+                Celular de contacto inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="cargo_servicio" class="col-form-label col-sm-6">Cargo Contacto Servicio</label>
+
+              <input id="cargo_servicio" name="cargo_servicio" type="text"  [(ngModel)]="cliente.cargo_servicio" class="form-control"
+                placeholder="Ingrese el cargo del contacto Servicio" />
+              <!--<div class="alert alert-danger"
+                *ngIf="formulario?.get('cargo_servicio')?.invalid && formulario?.get('cargo_servicio')?.touched">
+                Cargo de contacto inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="correo_electronico" class="col-form-label col-sm-6">Correo Jefe de Servicio</label>
+
+              <input id="correo_electronico" name="correo_electronico" type="email"  [(ngModel)]="cliente.correo_electronico" class="form-control"
+                placeholder="Ingrese el correo del jefe Servicio" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('correo_electronico')?.invalid && formulario?.get('correo_electronico')?.touched">
+                Correo de jefe inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="celular_jefe" class="col-form-label col-sm-6">Celular Jefe de Servicio</label>
+
+              <input id="celular_jefe" name="celular_jefe" type="text"   [(ngModel)]="cliente.celular_jefe" class="form-control"
+                placeholder="Ingrese el celular del jefe Servicio" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('celular_jefe')?.invalid && formulario?.get('celular_jefe')?.touched">
+                Celular de jefe inválido
+              </div>-->
+
+            </div>
+            <div class="form-group">
+              <label for="telefono_jefe" class="col-form-label col-sm-6">Telefono Jefe de Servicio</label>
+
+              <input id="telefono_jefe" name="telefono_jefe" type="text"  [(ngModel)]="cliente.telefono_jefe" class="form-control"
+                placeholder="Ingrese el telefono del jefe Servicio" />
+              <!--<div class="alert alert-danger"
+                *ngIf="formulario?.get('telefono_jefe')?.invalid && formulario?.get('telefono_jefe')?.touched">
+              Telefono del Jefe inválido
+              </div>-->
+            </div>
+          </div>
+          <div *ngIf="activeTab === 3">
+            <div class="form-group">
+              <label for="nombre_cobro" class="col-form-label col-sm-6">Nombre Contacto Cobro</label>
+
+              <input id="nombre_cobro" name="nombre_cobro" type="text"  [(ngModel)]="cliente.nombre_cobro" class="form-control"
+                placeholder="Ingrese Nombre del Contacto Cobro" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('nombre_cobro')?.invalid && formulario?.get('nombre_cobro')?.touched">
+                Nombre de Contacto Cobro inválido
+
+              </div>-->
+            </div>
+            <div class="form-group">
+              <label for="cargo_cobro" class="col-form-label col-sm-6">Cargo Contacto Cobro</label>
+
+              <input id="cargo_cobro" name="cargo_cobro"type="text" [(ngModel)]="cliente.cargo_cobro" class="form-control"
+                placeholder="Ingrese Cargo del Contacto Cobro" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('cargo_cobro')?.invalid && formulario?.get('cargo_cobro')?.touched">
+                Nombre de Contacto Cobro inválido
+
+              </div>-->
+            </div>
+            <div class="form-group">
+              <label for="correo_cobro" class="col-form-label col-sm-6">Correo Contacto Cobro</label>
+
+              <input id="correo_cobro" name="correo_cobro"type="email"   [(ngModel)]="cliente.correo_cobro" class="form-control"
+                placeholder="Ingrese Correo del Contacto Cobro" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('correo_cobro')?.invalid && formulario?.get('correo_cobro')?.touched">
+                Correo de cargo Cobro inválido
+
+              </div>-->
+            </div>
+            <div class="form-group">
+              <label for="celular_cobro" class="col-form-label col-sm-6">Celular Contacto Cobro</label>
+              <input id="celular_cobro" name="celular_cobro"type="text"   [(ngModel)]="cliente.celular_cobro" class="form-control"
+                placeholder="Ingrese Celular del Contacto Cobro" />
+              <!--<div class="alert alert-danger"
+                *ngIf="formulario?.get(formulario.value.celular_cobro)?.invalid && formulario?.get(formulario.value.celular_cobro)?.touched">
+                Celular de Contacto Cobro inválido
+              </div>-->
+            </div>
+            <div class="form-group">
+              <label for="telefono_cobro" class="col-form-label col-sm-6">Telefono Contacto Cobro</label>
+
+              <input id="telefono_cobro" name="telefono_cobro"type="text"  [(ngModel)]="cliente.telefono_cobro" class="form-control"
+                placeholder="Ingrese Telefono del Contacto Cobro" />
+             <!-- <div class="alert alert-danger"
+                *ngIf="formulario?.get('telefono_cobro')?.invalid && formulario?.get('telefono_cobro')?.touched">
+                Telefono de Contacto Cobro inválido
+              </div>-->
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <button class="btn btn-primary" role="button" (click)="create()" *ngIf="!cliente.id else elseBlock">Crear</button> <!-- *ngIf="!cliente.id"-->
+              <ng-template #elseBlock>
+                <button class="btn btn-primary" role="button" (click)="update()" >Editar</button>
+              </ng-template>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
